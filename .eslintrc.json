@@ -17,6 +17,7 @@
       { "ignore": ["navigation", "navigation.navigate"] }
     ],
     "react/react/jsx-runtime": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "react/prop-types": "off"
   }
 }

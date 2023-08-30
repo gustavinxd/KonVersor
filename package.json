@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@expo-google-fonts/inria-sans": "^0.2.3",
+    "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^19.0.0",
+    "@heroicons/react": "^2.0.18",
     "@react-navigation/material-top-tabs": "^6.6.3",
     "@react-navigation/native": "^6.1.7",
     "@react-navigation/native-stack": "^6.9.13",

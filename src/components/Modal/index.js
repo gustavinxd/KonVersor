@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Modal } from "react-native-web";
+import React, { useState } from "react";
+import { Modal, Text } from "react-native";
 
 export default function AlterarConversor(){
 
@@ -8,14 +8,12 @@ export default function AlterarConversor(){
     return (
       <Modal
         animationType="slide"
-        transparent={true}
-        visible={modalVisivel}
+        visible={modalVisible}
         onRequestClose={() => {
           setModalVisible(false);
         }}
       >
-        
-
+      <Text>Oiiiiii</Text>
       </Modal>
     );
 }
