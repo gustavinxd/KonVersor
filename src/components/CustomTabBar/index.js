@@ -1,15 +1,20 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons'
+import { TextBold } from '../../Fonts/index';
 
 export default function CustomTabBar({state, descriptors, navigation}) {
+
   return (
     <View style={styles.container}>
+
       <View style={styles.teamLogo}>
-        <FontAwesome5 name="skull" color="#fff" size={20}/>
-        <Text style={styles.teamTitle}>PirateDevs</Text>
+        <FontAwesome5 name="skull" color="#fff" size={18}/>
+        <TextBold text="Pirate" style={styles.teamTitlePirate}/>
+        <TextBold text="Devs" style={styles.teamTitleDev}/>
       </View>
+
       <View style={styles.content}>
         {state.routes.map((route, index) =>{
           const {options} = descriptors[route.key];
@@ -38,6 +43,7 @@ export default function CustomTabBar({state, descriptors, navigation}) {
 
           return(
             <TouchableOpacity
+              key={route.key}
               accessibilityRole="button"
               accessibilityState={isFocused ? { selected: true } : {}}
               accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -87,15 +93,19 @@ const styles = StyleSheet.create({
       padding: 4
     },
     teamLogo:{
-      color: '#fff',
       position:'absolute',
       left: 15,
       bottom: 10,
       flexDirection: 'row',
-      alignItems:'flex-end'
     },
-    teamTitle:{
+    teamTitlePirate:{
+      color: '#2E9FB6',
+      fontSize: 16,
+
+    },
+    teamTitleDev:{
       color: '#fff',
-      fontSize: 16
+      fontSize: 16,
+
     },
 })
