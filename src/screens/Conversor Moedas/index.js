@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
+import AlterarValor from '../../components/AlterarValor/index';
 
 export default function ConversorMoedas(){
     return(
         <View style={styles.container}>
         <Text style={styles.p}>Moedas</Text>
+        <AlterarValor modalType='Valor'/>
       </View>
     )
 }
