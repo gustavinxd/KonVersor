@@ -1,22 +1,22 @@
 import React from 'react';
 import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native';
-import { Button } from 'react-native-elements';
-import { Entypo } from '@expo/vector-icons'; 
+import { Feather  } from '@expo/vector-icons'; 
 
 
-export default function ButtonCard(){
+export default function ButtonCard(onPress){
     return(
-        <View style = {styles.buttonsty}>
-            <TouchableOpacity>
-                <Entypo />
-            </TouchableOpacity>
-        </View>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
+            <Feather name='repeat' size={30} color='#2E9FB6' style={{position: 'absolute', left: 10, padding: 3}}/>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    buttonsty: {
-      
-  },
+    container: {
+        backgroundColor: '#393939',
+        borderRadius: 5,
+        padding: 20,
+        alignItems: 'left',
 
+    },
 })
