@@ -55,7 +55,6 @@ async function fetchCountryFlagsByCurrencies (currencies){
       const response = await axios.get(`${apiUrlCountryflag}${currency}`)
       return response.data
     }catch(erro){
-      console.error(`Erro na requisição para ${currency}: ${erro.message}`)
       return [{flags:{png: 'https://flagcdn.com/w320/br.png'}}];
     }
   }));

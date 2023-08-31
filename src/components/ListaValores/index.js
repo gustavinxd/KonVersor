@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 15,
     gap: 15,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 15
   },
   countryImg:{
     width: 45,
