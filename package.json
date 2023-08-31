@@ -23,9 +23,12 @@
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
     "react-native": "0.72.4",
     "react-native-elements": "^3.4.3",
+    "react-native-material": "^0.0.4",
     "react-native-tab-view": "^3.5.2",
+    "react-native-vector-icons": "^10.0.0",
     "react-native-web": "~0.19.6",
     "react-native-xml2js": "^1.0.3",
     "xml2js": "^0.6.2"
