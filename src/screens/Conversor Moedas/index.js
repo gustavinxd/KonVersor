@@ -1,16 +1,19 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
+import Card from '../../components/Cards/index';
 import AlterarValor from '../../components/AlterarValor/index';
-
 
 export default function ConversorMoedas(){
 
     return(
         <View style={styles.container}>
-        <Text style={styles.p}>Moedas</Text>
-        <AlterarValor modalType='Valor'/>
-      </View>
+            <Card>
+              <Text style={{fontSize: 20, lineHeight: 18}}>BRL </Text>
+              <Text style={{fontSize: 15, lineHeight: 37}}>Real</Text>
+            </Card>
+
+        </View>
     )
 }
 
