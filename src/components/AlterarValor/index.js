@@ -1,13 +1,58 @@
-import React, { useState } from 'react';
-import { Modal, View, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Modal, View, StyleSheet, TouchableOpacity, TextInput, FlatList } from 'react-native';
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
 import { TextBold } from '../../Fonts/index';
+import ListaValores from '../ListaValores/index';
+import SeparatorItem from '../SeparatorItem/index';
+import { fetchCountryFlagsByCurrencies, fetchXMLData } from '../../services/api/conversor-moedas';
 
 export default function AlterarValor({modalType}) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [currencies, setCurrencies] = useState([]);
+  const [currenciesName, setCurrenciesName] = useState([]);
+  const [flagCurrencies, setFlagCurrencies] = useState([]);
+  const [dataCurrency, setDataCurrency] = useState([]);
+  
+
+  useEffect(() => {
+    fetchXMLData()
+      .then(data => {
+        setCurrencies(Object.keys(data));
+        setCurrenciesName(Object.values(data));
+      });
+
+  }, []);
+
+  useEffect(() =>{
+
+    fetchCountryFlagsByCurrencies(currencies).then((data) =>{
+      const infoValues = Object.values(data);
+    
+      const filterData = infoValues.map((infoValue) => ({
+        data: infoValue[0]
+      }))
+
+      const flagsImg = filterData.map(item => {
+          return item.data.flags.png
+      })
+
+      setFlagCurrencies(flagsImg)
+
+    })
+    .catch(erro =>{
+      console.error(`Erro geral: ${erro.message}`)
+    })
+  },[currencies])
+
+    const mergeData = currencies.map((moeda, index) => ({
+      currency: moeda,
+      currencyName: currenciesName[index][0],
+      flagImg: flagCurrencies[index]
+    }));
+
+    setDataCurrency(mergeData)
 
   return (
-
     <>
       <Modal
         animationType="slide"
@@ -42,9 +87,28 @@ export default function AlterarValor({modalType}) {
             {/* Modal Title */}
             <TextBold text={`Alterar ${modalType}`} style={styles.modalTitle}/>
 
-            <TextInput 
-              style={styles.modalInput}
+            {/* Modal Input Search */}
+            <View style={styles.inputContainer}>
+              {/* Input de pesquisa */}
+              <TextInput 
+                style={styles.modalInput}
+                placeholder='Pesquise por uma moeda...'
+                placeholderTextColor='#ACB1B2'
+                selectionColor='#ACB1B2'
+                
+              />
+              {/* Icone de pesquisa */}
+              <FontAwesome5 name='search' size={25} color='#ACB1B2' style={styles.iconSearch}/>
+            </View>
+
+            <FlatList
+            SeparatorItem={<SeparatorItem/>}
+            data={dataCurrency}
+            renderItem={({item}) => <ListaValores flagCurrency={item.flagImg} currency={item.currency} currencyName={item.currencyName}/>}
+            keyExtractor={item => item.currency}
             />
+
+
           </View>
         </View>
       </Modal>
@@ -67,16 +131,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor:'#0D0D0D'
   },
-  modalClose: {
-    position: 'absolute',
-    top: 0,
-    right: 25
-  },
-  openModal: {
-    position: 'absolute',
-    bottom: 15,
-    right: 15,
-  },
   teamLogo:{
     flexDirection: 'row',
     position:'absolute',
@@ -93,6 +147,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
 
   },
+  modalClose: {
+    position: 'absolute',
+    top: 0,
+    right: 25
+  },
+  openModal: {
+    position: 'absolute',
+    bottom: 15,
+    right: 15,
+  },
   modalTitle:{
     color: '#2E9FB6',
     fontSize: 24,
@@ -101,13 +165,25 @@ const styles = StyleSheet.create({
     marginHorizontal: 25,
     marginVertical: 64,
     flexDirection: 'column',
-    gap: 25
+    gap: 30
+  },
+  inputContainer:{
+    flexDirection: 'row'
   },
   modalInput:{
-    backgroundColor: '#191919',
-    padding: 12,
+    flex: 1,
+    backgroundColor: '#393939',
+    padding: 13,
+    paddingHorizontal: 60,
     color: '#ACB1B2',
-    borderRadius: 8
-  }
+    borderRadius: 8,
+    fontFamily: 'InriaSans_300Light',
+    fontSize: 16
+  },
+  iconSearch:{
+    position: 'absolute',
+    left: 16,
+    top: 13
+  },
 
 });
