@@ -1,8 +1,11 @@
+/* eslint-disable arrow-body-style */
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Card from '../../components/Cards/index';
+import AlterarValor from '../../components/AlterarValor/index';
 
 export default function ConversorMoedas(){
+
     return(
         <View style={styles.container}>
             <Card/>
