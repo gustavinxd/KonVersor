@@ -1,12 +1,11 @@
 import { React, useState } from 'react';
-import { SafeAreaView, Text, StyleSheet, Switch, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Switch, View} from 'react-native';
 import { ThemeContext } from '../../context/ThemeContext';
 import { myColors } from '../../styles/Colors';
-import Button from '../../components/Button';
 import MyKeyboard from '../../components/myKeyboard';
 
 export default function Calculadora() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   return (
     <ThemeContext.Provider value={theme}>
       <SafeAreaView
@@ -16,11 +15,11 @@ export default function Calculadora() {
             : [styles.container, { backgroundColor: '#000' }]
         }
       >
-        <Switch
+        {/* <Switch
           value={theme === 'light'}
           onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        />
-        <MyKeyboard />
+        /> */}
+        <MyKeyboard/>
       </SafeAreaView>
     </ThemeContext.Provider>
   );

@@ -7,12 +7,14 @@ export const Styles = StyleSheet.create({
         height: 72,
         borderRadius: 24,
         backgroundColor: myColors.blue,
+        borderWidth: 20,
+        borderColor: 'blue',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 8,
     },
     btnDark: {
-        width: 72,
+        width: 82,
         height: 72,
         borderRadius: 24,
         justifyContent: 'center',
@@ -28,10 +30,30 @@ export const Styles = StyleSheet.create({
         margin: 8,
     },
     btnGray: {
-        width: 72,
+        width: 82,
         height: 72,
         borderRadius: 24,
-        backgroundColor: myColors.btnGray,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 8,
+    },
+    btnGray2: {
+        width: 82,
+        height: 72,
+        borderRadius: 24,
+        justifyContent: 'center',
+        borderColor: myColors.blue,
+        borderWidth: 2,
+        alignItems: 'center',
+        margin: 8,
+    },
+    btnBluee: {
+        width: 82,
+        height: 72,
+        borderRadius: 24,
+        borderWidth: 20,
+        borderColor: myColors.blue, // Defina a cor da borda como azul
+        backgroundColor: myColors.light, // Ajuste a cor de fundo, se necessário
         justifyContent: 'center',
         alignItems: 'center',
         margin: 8,
@@ -44,6 +66,10 @@ export const Styles = StyleSheet.create({
         fontSize: 32,
         color: myColors.black,
     },
+    smallTextBlue: {
+        fontSize: 32,
+        color: myColors.blue,
+    },
     //teclado
     row: {
         maxWidth: '100%',
@@ -52,6 +78,7 @@ export const Styles = StyleSheet.create({
     viewBottom: {
         position: 'absolute',
         bottom: 50,
+        width: '100%',
     },
     screenFirstNumber: {
         fontSize: 96,
