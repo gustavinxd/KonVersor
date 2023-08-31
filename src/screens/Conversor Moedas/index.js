@@ -1,15 +1,8 @@
 /* eslint-disable arrow-body-style */
-<<<<<<< HEAD
 import React, {useState, useEffect} from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-=======
-import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import Card from '../../components/Cards/index';
->>>>>>> c0663802b8d67f38394df39576ef3bc9185b9816
+import { View, Text, StyleSheet } from 'react-native'
 import AlterarValor from '../../components/AlterarValor/index';
 import { fetchCountryFlagsByCurrencies, fetchXMLData } from '../../services/api/conversor-moedas';
-
 
 export default function ConversorMoedas(){
   const [currencies, setCurrencies] = useState([]);
@@ -55,18 +48,10 @@ export default function ConversorMoedas(){
 
     return(
         <View style={styles.container}>
-<<<<<<< HEAD
         <Text style={styles.p}>Moedas</Text>
         <AlterarValor modalType='Valor' data={dataCurrency}/>
       </View>
-=======
-            <Card>
-              <Text style={{fontSize: 20, lineHeight: 18}}>BRL </Text>
-              <Text style={{fontSize: 15, lineHeight: 37}}>Real</Text>
-            </Card>
 
-        </View>
->>>>>>> c0663802b8d67f38394df39576ef3bc9185b9816
     )
 }
 
