@@ -5,7 +5,7 @@ import { TextLight, TextRegular } from '../../Fonts/index';
 
 export default function ListaValores({onPress, flagCurrency, currency, currencyName}){
     return(
-        <TouchableOpacity style={styles.container} onPress={onPress}>
+        <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.5}>
           <Image src={flagCurrency} style={styles.countryImg}/>
           <View style={styles.textSection}>
             <TextRegular text={currency} style={styles.currency}/> 
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     padding: 15,
     gap: 15,
     alignItems: 'center',
-    marginBottom: 15
   },
   countryImg:{
     width: 45,

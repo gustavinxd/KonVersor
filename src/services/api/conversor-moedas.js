@@ -6,6 +6,9 @@ const apiUrlCurricies = "https://economia.awesomeapi.com.br/xml/available/uniq";
 const apiUrlConvertor = "https://economia.awesomeapi.com.br/json/";
 const apiUrlCountryflag = "https://restcountries.com/v3.1/currency/";
 
+// *Observação: as funções parseStringPromise(), fetchXMLData(), fetchCountryFlagsByCurrencies() 
+// foram utilizadas para extrair um array de objetos onde contém todas as moedas, nome das moedas e bandeira de seus respectivos países
+// e armazenado na pasta data o resultado.
 
 // Transforma dados XML em um objeto JSON
 async function parseStringPromise(xml) {
@@ -39,17 +42,8 @@ async function fetchXMLData() {
   }
 }
 
-async function fetchConvertor (curricieInput, curricieResult){
-  try{
-    const response = await axios.get(`${apiUrlConvertor}${curricieInput}-${curricieResult}`)
-    return response.data
-  }catch(error){
-    console.log('erro', error)
-    return [];
-  }
-}
-
-async function fetchCountryFlagsByCurrencies (currencies){
+// Função que pesquisa por países a partir de sua moeda, foi extraído a bandeira como dado.
+async function fetchCountryFlagsByCurrencies(currencies){
   const results = await Promise.all(currencies.map(async (currency) =>{
     try{
       const response = await axios.get(`${apiUrlCountryflag}${currency}`)
@@ -61,5 +55,18 @@ async function fetchCountryFlagsByCurrencies (currencies){
 
   return results
 }
+
+// Função que retorna valor da cotação entre duas moedas
+async function fetchConvertor (curricieInput, curricieResult){
+  try{
+    const response = await axios.get(`${apiUrlConvertor}${curricieInput}-${curricieResult}`)
+    return response.data
+  }catch(error){
+    console.log('erro', error)
+    return [];
+  }
+}
+
+
 
 export {fetchXMLData, fetchConvertor, fetchCountryFlagsByCurrencies};

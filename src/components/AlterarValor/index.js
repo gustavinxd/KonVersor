@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import {
   Modal,
@@ -7,16 +8,17 @@ import {
   TextInput,
   FlatList
 } from 'react-native';
-import { FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { FontAwesome5, Ionicons, Entypo } from '@expo/vector-icons';
 import { TextBold } from '../../Fonts/index';
 import ListaValores from '../ListaValores/index';
 import SeparatorItem from '../SeparatorItem/index';
 
-export default function AlterarValor({ modalType, data }) {
+export default function AlterarValor({ data, getValue }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [search, setSearch] = useState('');
   const [list, setList] = useState(data);
 
+  // useEffect em que renderiza a lista de moedas novamente ao pesquisar na barra de busca
   useEffect(() => {
     if (search === '') {
       setList(data);
@@ -24,7 +26,7 @@ export default function AlterarValor({ modalType, data }) {
       setList(
         data.filter(
           (item) =>
-            item.currency.toUpperCase().indexOf(search.toUpperCase()) > -1
+            item.currencyName.toUpperCase().indexOf(search.toUpperCase()) > -1
         )
       );
     }
@@ -61,7 +63,7 @@ export default function AlterarValor({ modalType, data }) {
           {/* Modal Content */}
           <View style={styles.content}>
             {/* Modal Title */}
-            <TextBold text={`Alterar ${modalType}`} style={styles.modalTitle} />
+            <TextBold text='Alterar Valor' style={styles.modalTitle} />
 
             {/* Modal Input Search */}
             <View style={styles.inputContainer}>
@@ -73,6 +75,7 @@ export default function AlterarValor({ modalType, data }) {
                 placeholder="Pesquise por uma moeda..."
                 placeholderTextColor="#ACB1B2"
                 selectionColor="#ACB1B2"
+                
               />
               {/* Icone de pesquisa */}
               <FontAwesome5
@@ -83,11 +86,17 @@ export default function AlterarValor({ modalType, data }) {
               />
             </View>
 
+            {/* Lista de todas as moedas possíveis para converter */}
             <FlatList
-              SeparatorItem={<SeparatorItem />}
+              ItemSeparatorComponent={SeparatorItem}
               data={list}
               renderItem={({ item }) => (
                 <ListaValores
+                  onPress={() => {
+                    getValue(item.currencyName)
+                    setModalVisible(false)
+                    setSearch('')
+                  }}
                   flagCurrency={item.flagImg}
                   currency={item.currency}
                   currencyName={item.currencyName}
@@ -95,17 +104,19 @@ export default function AlterarValor({ modalType, data }) {
               )}
               keyExtractor={(item) => item.currency}
             />
+            
           </View>
         </View>
       </Modal>
 
+      {/* Botao de abrir a modal */}
       <TouchableOpacity
         onPress={() => {
           setModalVisible(true);
         }}
         style={styles.openModal}
       >
-        <FontAwesome5 name="skull" color="#fff" size={30} />
+        <Entypo name='chevron-right' color="#2E9FB6" size={40} />
       </TouchableOpacity>
     </>
   );
