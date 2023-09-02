@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import {
   Modal,
   View,
+  SafeAreaView,
   StyleSheet,
   TouchableOpacity,
   TextInput,
@@ -42,7 +43,7 @@ export default function AlterarValor({ data, getValue }) {
         }}
       >
         {/* Modal container */}
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
           {/* Logo da equipe */}
           <View style={styles.teamLogo}>
             <FontAwesome5 name="skull" color="#fff" size={18} />
@@ -93,7 +94,7 @@ export default function AlterarValor({ data, getValue }) {
               renderItem={({ item }) => (
                 <ListaValores
                   onPress={() => {
-                    getValue(item.currencyName)
+                    getValue(item)
                     setModalVisible(false)
                     setSearch('')
                   }}
@@ -106,7 +107,7 @@ export default function AlterarValor({ data, getValue }) {
             />
             
           </View>
-        </View>
+        </SafeAreaView>
       </Modal>
 
       {/* Botao de abrir a modal */}
@@ -114,7 +115,6 @@ export default function AlterarValor({ data, getValue }) {
         onPress={() => {
           setModalVisible(true);
         }}
-        style={styles.openModal}
       >
         <Entypo name='chevron-right' color="#2E9FB6" size={40} />
       </TouchableOpacity>
@@ -146,11 +146,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     right: 25
-  },
-  openModal: {
-    position: 'absolute',
-    bottom: 15,
-    right: 15
   },
   modalTitle: {
     color: '#2E9FB6',
