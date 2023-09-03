@@ -60,9 +60,9 @@ async function fetchCountryFlagsByCurrencies(currencies){
 async function fetchConvertor (curricieInput, curricieResult){
   try{
     const response = await axios.get(`${apiUrlConvertor}${curricieInput}-${curricieResult}`)
-    return response.data
+    return response.data[0]
   }catch(error){
-    console.log('erro', error)
+    // console.log('Erro', error)
     return [];
   }
 }

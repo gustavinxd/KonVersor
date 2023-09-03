@@ -698,7 +698,7 @@ const DATA_CURRENCY = [
   {
     currency: 'USDT',
     currencyName: 'Dólar Americano',
-    flagImg: 'https://flagcdn.com/w320/br.png'
+    flagImg: 'https://flagcdn.com/w320/us.png'
   },
   {
     currency: 'UYU',

@@ -14,7 +14,7 @@ import { TextBold } from '../../Fonts/index';
 import ListaValores from '../ListaValores/index';
 import SeparatorItem from '../SeparatorItem/index';
 
-export default function AlterarValor({ data, getValue }) {
+export default function AlterarValor({ data, getValue, resetField }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [search, setSearch] = useState('');
   const [list, setList] = useState(data);
@@ -95,6 +95,7 @@ export default function AlterarValor({ data, getValue }) {
                 <ListaValores
                   onPress={() => {
                     getValue(item)
+                    resetField('0')
                     setModalVisible(false)
                     setSearch('')
                   }}
