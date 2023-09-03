@@ -94,6 +94,9 @@ export default function ConversorMoedas() {
           value={valueReq}
           onChangeText={(t) => setValueReq(t)}
           keyboardType='numeric'
+          clearTextOnFocus
+          placeholder='Insira um valor ...'
+          placeholderTextColor='#ACB1B2'
         />
       </View>
 
