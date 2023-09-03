@@ -64,6 +64,7 @@ export default function ConversorMoedas() {
 
   return (
     <View style={styles.container}>
+      
       {/* Card 1 */}
       <View style={styles.card}>
         <View style={styles.cardTop}>
