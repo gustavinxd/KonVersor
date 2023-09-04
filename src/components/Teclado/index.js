@@ -20,13 +20,15 @@ export default props=>{
 
 const styles = StyleSheet.create({
     btn:{
-        fontSize: 30,
-        height: Dimensions.get('window').width/3,
-        width: Dimensions.get('window').width/3,
-        padding: 20,
+        fontSize: 25,
+        height: Dimensions.get('window').width/5,
+        width: Dimensions.get('window').width/4,
+        padding: 10,
         backgroundColor: '#05080A',
         color: '#FFF',
         textAlign: 'center',
+        borderColor: '#FFF',
+        borderWidth: 1,
     },
     btnClear: {
         color: '#2E9FB6',
