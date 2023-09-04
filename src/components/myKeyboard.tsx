@@ -3,6 +3,7 @@ import Button from './Button';
 import { View, Text } from 'react-native';
 import { Styles } from '../styles/GlobalStyles';
 import { myColors } from '../styles/Colors';
+import { TextBold } from '../Fonts';
 
 export default function MyKeyboard() {
   const [firstNumber, setFirstNumber] = React.useState('');
@@ -63,38 +64,34 @@ export default function MyKeyboard() {
   const firstNumberDisplay = () => {
     if (result !== null) {
       return (
-        <Text
+        <TextBold
+          text={result?.toString()}
           style={
             result.toString().length < 5
-              ? [Styles.screenFirstNumber, { color: myColors.result }]
-              : [
-                  Styles.screenFirstNumber,
-                  { fontSize: 50, color: myColors.result }
-                ]
+              ? Styles.screenFirstResult
+              : Styles.screenFirstResult2
           }
-        >
-          {result?.toString()}
-        </Text>
+        />
+          
+        
       );
     }
     if (firstNumber && firstNumber.length < 6) {
-      return <Text style={Styles.screenFirstNumber}>{firstNumber}</Text>;
+      return <TextBold  text={firstNumber} style={Styles.screenFirstNumber}/>
     }
     if (firstNumber === '') {
-      return <Text style={Styles.screenFirstNumber}>{'0'}</Text>;
+      return <TextBold  text={'0'} style={Styles.screenFirstNumber}/>;
     }
     if (firstNumber.length > 5 && firstNumber.length < 8) {
       return (
-        <Text style={[Styles.screenFirstNumber, { fontSize: 70 }]}>
-          {firstNumber}
-        </Text>
+        <TextBold  text={firstNumber}  style={[Styles.screenFirstNumber, { fontSize: 70 }]}/>
+          
       );
     }
     if (firstNumber.length > 7) {
       return (
-        <Text style={[Styles.screenFirstNumber, { fontSize: 50 }]}>
-          {firstNumber}
-        </Text>
+        <TextBold  text={firstNumber} style={[Styles.screenFirstNumber, { fontSize: 50 }]}/>
+          
       );
     }
   };

@@ -2,6 +2,7 @@ import { useContext, useState} from 'react';
 import { TouchableOpacity, Text} from 'react-native';
 import { ThemeContext } from '../context/ThemeContext';
 import { Styles } from '../styles/GlobalStyles';
+import { TextBold } from '../Fonts';
 
 interface ButtonProps {
     onPress: () => void;
@@ -31,7 +32,8 @@ export default function Button({title, onPress, isBlue, isGray, isBblue, isResul
             }
             onPress={onPress}
         >
-            <Text
+            <TextBold
+                text={title}
                 style={
                     isBlue || isGray
                     ? Styles.smallTextLight
@@ -41,9 +43,9 @@ export default function Button({title, onPress, isBlue, isGray, isBblue, isResul
                     ? Styles.smallTextLight
                     : Styles.smallTextDark
                 }
-            >
-                {title}
-            </Text>
+            />
+                
+            
             
         </TouchableOpacity>
     );

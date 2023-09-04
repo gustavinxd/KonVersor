@@ -91,7 +91,20 @@ export const Styles = StyleSheet.create({
         color: myColors.gray,
         fontWeight: '200',
         alignSelf: 'flex-end',
-    }
+    },
+    screenFirstResult: {
+        fontSize: 96,
+        
+        fontWeight: '200',
+        color: myColors.blue,
+        alignSelf: 'flex-end',
+    },
+    screenFirstResult2: {
+        fontSize: 50,
+        color: myColors.blue,
+        fontWeight: '200',
+        alignSelf: 'flex-end',
+    },
 
 
 
