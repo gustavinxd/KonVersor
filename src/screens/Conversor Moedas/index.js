@@ -1,9 +1,10 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Card from '../../components/Cards/index';
 import ButtonCard from '../../components/Button/index';
-import AlterarValor from '../../components/AlterarValor/index';
+import Btn from '../../components/Teclado/index';
+// import AlterarValor from '../../components/AlterarValor/index';
 
 export default function ConversorMoedas(){
   return(
@@ -12,6 +13,11 @@ export default function ConversorMoedas(){
               <ButtonCard/>
           <Card/>
       </View>
+      <View style = {styles.}>
+        <Btn label="7" aoClicar={()=>{}}></Btn>
+        <Btn label="8" aoClicar={()=>{}}></Btn>
+        <Btn label="9" aoClicar={()=>{}}></Btn>
+      </View>
   )
 }
 
@@ -19,14 +25,13 @@ const styles = StyleSheet.create({
   container: {
       backgroundColor: '#0D0D0D',
       flex: 1,
-      alignItems: '',
       padding: 30,
+      gap: 18,
   },
   p:{
     color:'#fff'
   },
   card: {
-    flexDirection: 'row',
-    flex: 1,
+    
   },
 })

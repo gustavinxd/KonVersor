@@ -1,22 +1,21 @@
 import React from 'react';
-import { View, StyleSheet, Text, SafeAreaView, TouchableOpacity } from 'react-native';
-import { Feather  } from '@expo/vector-icons'; 
-
+import { StyleSheet, TouchableOpacity } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function ButtonCard(onPress){
     return(
         <TouchableOpacity style={styles.container} onPress={onPress}>
-            <Feather name='repeat' size={30} color='#2E9FB6' style={{position: 'absolute', left: 10, padding: 3}}/>
+            <AntDesign name="swap" size={30} color='#fff' style={{position: 'absolute', padding: 9}}/>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#393939',
+        backgroundColor: '#191919',
         borderRadius: 5,
-        padding: 20,
-        alignItems: 'left',
-
+        padding: 24,
+        alignItems: '',
+        width: 30,
     },
 })

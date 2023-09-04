@@ -1,29 +1,27 @@
 import React from 'react';
-import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
-import { Input, Button } from 'react-native-elements';
-import { ButtonCard } from '../../components/Button/index';
+import { View, StyleSheet } from 'react-native';
+import { Input } from 'react-native-elements';
+// import { ButtonCard } from '../../components/Button/index';
 
-export default function Card(props){
+export default function Card(){
     return(
         <View style={styles.card}>
-            <View style = {styles.cardContent}>
-                {props.children}
+            <Input
             
-                    <Input
-                    
-                    />
-            </View>
+            />
         </View>
 
     )
 }
 
+// const deviceWidth = Math.round(Dimensions.get('window').width);
+
 const styles = StyleSheet.create({
     card: {
-      borderRadius: 7,
+      borderRadius: 8,
       backgroundColor: '#393939',
-      elevation: 8,
-      
+    //   width: deviceWidth - 10,
+      height: 130,
   },
       cardContent:{
         padding: 20,
