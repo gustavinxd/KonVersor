@@ -19,6 +19,7 @@ export default function AppNavigator() {
         borderBottomWidth: 0
       }
     }}
+    // eslint-disable-next-line react/no-unstable-nested-components, react/jsx-props-no-spreading
     tabBar={(props) => <CustomTabBar {...props}/> }
     >
       <Tab.Screen 
