@@ -31,19 +31,23 @@ export default function MyKeyboard() {
     switch (operation) {
       case '+':
         clear();
-        setResult(parseInt(secondNumber) + parseInt(firstNumber));
+        setResult(parseFloat(secondNumber) + parseFloat(firstNumber));
         break;
       case '-':
         clear();
-        setResult(parseInt(secondNumber) - parseInt(firstNumber));
+        setResult(parseFloat(secondNumber) - parseFloat(firstNumber));
         break;
       case '*':
         clear();
-        setResult(parseInt(secondNumber) * parseInt(firstNumber));
+        setResult(parseFloat(secondNumber) * parseFloat(firstNumber));
         break;
       case '/':
         clear();
-        setResult(parseInt(secondNumber) / parseInt(firstNumber));
+        if(parseFloat(firstNumber) !== 0){
+          setResult(parseFloat(secondNumber) / parseFloat(firstNumber));
+        } else if(parseFloat(secondNumber) === 0){
+          setResult(0);
+        }
         break;
       case '%':
         clear();
@@ -61,7 +65,7 @@ export default function MyKeyboard() {
       return (
         <Text
           style={
-            result < 99999
+            result.toString().length < 5
               ? [Styles.screenFirstNumber, { color: myColors.result }]
               : [
                   Styles.screenFirstNumber,
