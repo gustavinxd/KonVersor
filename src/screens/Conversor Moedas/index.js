@@ -144,6 +144,8 @@ export default function ConversorMoedas() {
           value={valueRes}
         />
       </View>
+
+      
     </View>
   );
 }
