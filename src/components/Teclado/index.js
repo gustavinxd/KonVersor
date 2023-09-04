@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableHighlight, Dimensions } from 'react-native';
+import { Icon } from 'react-native-elements'
 
 export default props=>{
 
@@ -21,8 +22,16 @@ export default props=>{
 const styles = StyleSheet.create({
     btn:{
         fontSize: 25,
+        height: Dimensions.get('window').width/4.6,
+        width: Dimensions.get('window').width/3,
+        padding: 22,
+        backgroundColor: '#05080A',
+        color: '#FFF',
+        textAlign: 'center',
+    },
+    Icon:{
         height: Dimensions.get('window').width/5,
-        width: Dimensions.get('window').width/4,
+        width: Dimensions.get('window').width/3.5,
         padding: 10,
         backgroundColor: '#05080A',
         color: '#FFF',
