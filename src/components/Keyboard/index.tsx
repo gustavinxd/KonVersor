@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from '../buttons/Button';
+import Button from '../ButtonKey';
 import { View, Text } from 'react-native';
 import { Styles } from '../../styles/GlobalStyles';
 import { myColors } from '../../styles/Colors';

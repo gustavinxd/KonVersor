@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { SafeAreaView, StyleSheet, Switch, View } from 'react-native';
 import { ThemeContext } from '../../context/ThemeContext';
 import { myColors } from '../../styles/Colors';
-import MyKeyboard from '../../components/keyboard/myKeyboard';
+import MyKeyboard from '../../components/Keyboard';
 
 export default function Calculadora() {
   const [theme, setTheme] = useState('dark');
