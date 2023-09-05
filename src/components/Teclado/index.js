@@ -1,45 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableHighlight, Dimensions } from 'react-native';
-import { Icon } from 'react-native-elements'
+import { StyleSheet, TouchableHighlight, Dimensions } from 'react-native';
 
-export default props=>{
-
-    const stylesbutton = [styles.btn]
-
-    if(props.Clear){
-         stylesbutton.push(styles.btnClear)
-    }
+export default function Btn ({children, onPress, value}){
 
     return(
         <TouchableHighlight
-            onPress={props.aoClicar}
+            onPress={onPress} style = {styles.btn} value = {value}
         >
-            <Text style = {stylesbutton}>{props.label}</Text>
+            {children}
         </TouchableHighlight>
     )
 }
 
 const styles = StyleSheet.create({
     btn:{
-        fontSize: 25,
-        height: Dimensions.get('window').width/4.6,
-        width: Dimensions.get('window').width/3,
-        padding: 22,
-        backgroundColor: '#05080A',
-        color: '#FFF',
-        textAlign: 'center',
-    },
-    Icon:{
-        height: Dimensions.get('window').width/5,
+        height: Dimensions.get('window').width/4.7,
         width: Dimensions.get('window').width/3.5,
-        padding: 10,
+        // padding: ,
         backgroundColor: '#05080A',
         color: '#FFF',
-        textAlign: 'center',
-        borderColor: '#FFF',
-        borderWidth: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+
     },
-    btnClear: {
-        color: '#2E9FB6',
-    }
 });
