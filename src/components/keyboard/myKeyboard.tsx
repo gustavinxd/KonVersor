@@ -6,9 +6,11 @@ import { myColors } from '../../styles/Colors';
 import { TextBold } from '../../Fonts';
 
 export default function MyKeyboard() {
+  // declaração das useStates
   const [expression, setExpression] = React.useState<string>('');
   const [result, setResult] = React.useState<number | null>(null);
 
+  // condicionais e funcoes para os handlebuttons
   const handleButtonPress = (buttonValue: string) => {
     if (buttonValue === 'C') {
       clear();
@@ -21,27 +23,25 @@ export default function MyKeyboard() {
     }
   };
 
+  // ToggleSign para setar o numero como + ou -
   const toggleSign = () => {
-    // Check if the expression is not empty and the first character is a minus sign
     if (expression !== '' && expression[0] === '-') {
-      // Remove the minus sign to make it positive
       setExpression(expression.slice(1));
     } else {
-      // Add a minus sign to make it negative
       setExpression('-' + expression);
     }
   };
 
+  // funcao para limpar as expressoes digitadas
   const clear = () => {
     setExpression('');
     setResult(null);
   };
 
+  // funcao para realizar as contas
   const getResult = () => {
     try {
-      // Replace '%' with '*0.01*' to correctly calculate percentages
       const cleanExpression = expression.replace(/%/g, '*0.01*');
-      // eslint-disable-next-line no-eval
       const calculatedResult = eval(cleanExpression);
       setResult(calculatedResult);
       setExpression(calculatedResult.toString());
@@ -52,7 +52,9 @@ export default function MyKeyboard() {
   };
 
   return (
+    // view main da calculadora
     <View style={Styles.viewBottom}>
+      {/* view do resultado  */}
       <View style={Styles.viewBottom}>
         <View
           style={{
@@ -74,7 +76,9 @@ export default function MyKeyboard() {
             />
           )}
         </View>
+        {/* barrinha de divisao do display com o teclado  */}
         <View style={{ backgroundColor: myColors.blue, height: 2 }} />
+        {/* view do teclado  */}
         <View style={Styles.row}>
           <Button title="C" isBblue onPress={() => handleButtonPress('C')} />
           <Button

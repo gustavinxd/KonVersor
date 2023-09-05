@@ -15,10 +15,12 @@ export default function Calculadora() {
             : [styles.container, { backgroundColor: '#000' }]
         }
       >
+        {/* switch para dark theme (on/off)  */}
         {/* <Switch
           value={theme === 'light'}
           onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         /> */}
+        {/* chamando a calculadora no index  */}
         <MyKeyboard />
       </SafeAreaView>
     </ThemeContext.Provider>

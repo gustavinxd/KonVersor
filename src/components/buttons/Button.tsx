@@ -4,6 +4,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 import { Styles } from '../../styles/GlobalStyles';
 import { TextBold } from '../../Fonts';
 
+// declarando os button propos
 interface ButtonProps {
   onPress: () => void;
   title: string;
@@ -13,6 +14,7 @@ interface ButtonProps {
   isResult?: boolean;
 }
 
+// exportando as funcoes dos botoes
 export default function Button({
   title,
   onPress,
@@ -21,8 +23,10 @@ export default function Button({
   isBblue,
   isResult
 }: ButtonProps) {
+  // esse theme seria utilizado para o darktheme que esta funcional no código porem nao foi adicionado no figma
   const theme = useContext(ThemeContext);
   return (
+    // pressionavel do botao
     <TouchableOpacity
       style={
         isBlue
@@ -39,6 +43,7 @@ export default function Button({
       }
       onPress={onPress}
     >
+      {/* texto que vai dentro do botao  */}
       <TextBold
         text={title}
         style={
