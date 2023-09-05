@@ -1,8 +1,8 @@
 import { React, useState } from 'react';
-import { SafeAreaView, StyleSheet, Switch, View} from 'react-native';
+import { SafeAreaView, StyleSheet, Switch, View } from 'react-native';
 import { ThemeContext } from '../../context/ThemeContext';
 import { myColors } from '../../styles/Colors';
-import MyKeyboard from '../../components/myKeyboard';
+import MyKeyboard from '../../components/keyboard/myKeyboard';
 
 export default function Calculadora() {
   const [theme, setTheme] = useState('dark');
@@ -19,7 +19,7 @@ export default function Calculadora() {
           value={theme === 'light'}
           onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         /> */}
-        <MyKeyboard/>
+        <MyKeyboard />
       </SafeAreaView>
     </ThemeContext.Provider>
   );
