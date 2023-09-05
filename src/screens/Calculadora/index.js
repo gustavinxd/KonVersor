@@ -1,25 +1,40 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { React, useState } from 'react';
+import { SafeAreaView, StyleSheet, Switch, View } from 'react-native';
+import { ThemeContext } from '../../context/ThemeContext';
+import { myColors } from '../../styles/Colors';
+import MyKeyboard from '../../components/keyboard/myKeyboard';
 
 export default function Calculadora() {
+  const [theme, setTheme] = useState('dark');
   return (
-    <View style={[{ flex: 1, justifyContent: 'center', alignItems: 'center' }, styles.container]}>
-      <Text style={styles.p}>Calculadora</Text>
-    </View>
+    <ThemeContext.Provider value={theme}>
+      <SafeAreaView
+        style={
+          theme === 'light'
+            ? styles.container
+            : [styles.container, { backgroundColor: '#000' }]
+        }
+      >
+        {/* switch para dark theme (on/off)  */}
+        {/* <Switch
+          value={theme === 'light'}
+          onValueChange={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        /> */}
+        {/* chamando a calculadora no index  */}
+        <MyKeyboard />
+      </SafeAreaView>
+    </ThemeContext.Provider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-      backgroundColor: '#0D0D0D',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+    backgroundColor: myColors.light,
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center'
   },
-  p:{
-    color:'#fff',
-  },
-  font:{
-    
+  p: {
+    color: '#fff'
   }
-})
+});
