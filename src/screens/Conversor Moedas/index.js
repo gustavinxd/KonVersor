@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
-  Dimensions,
 } from 'react-native';
 import { Octicons } from '@expo/vector-icons';
 import AlterarValor from '../../components/AlterarValor/index';
