@@ -57,7 +57,7 @@ export default function ConversorMoedas() {
     if (valueReq === '') {
       setValueRes('0');
     }else{
-      setValueRes(String(parseFloat((valueReq) * conversion).toFixed(2)));
+      setValueRes(String(parseFloat((valueReq) * conversion).toFixed(3)));
     }
 
   }, [valueReq, valueRes, currencyReq, currencyRes]);

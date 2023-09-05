@@ -59,7 +59,12 @@ export default function ConversorMedidas() {
     if (valueReq === '') {
       setValueRes('0');
     }else{
-      setValueRes(String(parseFloat((valueReq) * conversion).toFixed(2)));
+      const convResult = parseFloat((valueReq) * conversion)
+      if(convResult.length <= 6){
+        setValueRes(String(convResult));
+      }else{
+        setValueRes(String(convResult.toFixed(3)))
+      }
     }
 
   }, [valueReq, valueRes, unidadeReq, unidadeRes]);
