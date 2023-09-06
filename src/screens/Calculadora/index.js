@@ -12,7 +12,7 @@ export default function Calculadora() {
         style={
           theme === 'light'
             ? styles.container
-            : [styles.container, { backgroundColor: '#000' }]
+            : [styles.container, { backgroundColor: '#0D0D0D' }]
         }
       >
         {/* switch para dark theme (on/off)  */}
