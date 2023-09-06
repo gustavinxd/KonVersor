@@ -78,16 +78,20 @@ Equipe de Desenvolvedores
 
 ### Precificação
 1. Tela da Calculadora:
-Tempo gasto no desenvolvimento: 10 horas 
+Tempo gasto no desenvolvimento: 10 horas
+
 Custo total da tela da calculadora: 10 horas * R$200/hora = R$2.000
 
-2. Tela do Conversor de Medidas:
-Tempo gasto no desenvolvimento: 10 horas 
+3. Tela do Conversor de Medidas:
+Tempo gasto no desenvolvimento: 10 horas
+
 Custo total da tela do conversor de medidas: 10 horas * R$200/hora = R$2.000
 
-3. Tela do Conversor de Moedas:
-Tempo gasto no desenvolvimento: 10 horas 
+4. Tela do Conversor de Moedas:
+Tempo gasto no desenvolvimento: 10 horas
+
 Custo total da tela do conversor de moedas: 10 horas * R$200/hora = R$2.000 
+
 Agora, somando os custos de desenvolvimento de cada tela:
 
 Custo total do projeto = Custo da tela da calculadora + Custo da tela do conversor de medidas + Custo da tela do conversor de moedas
