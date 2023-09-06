@@ -1,16 +1,17 @@
 ## Conteúdos
 
-- [Geral](#projeto)
-  - [O que é o projeto?](#O-que-é-o-projeto)
-  - [Requisitos funcionais](#requistos-funcionais)
+- [Conteúdos](#conteúdos)
+- [Geral](#geral)
+  - [Projeto:](#projeto)
+- [O que é o projeto?](#o-que-é-o-projeto)
+  - [Requisitos Funcionais](#requisitos-funcionais)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como utilizar](#como-clonar)
-  - [Como rodar o App](#como-rodar-o-app)
-  - [Para a api](#para-a-api)
-  - [Como Rodar o Front-end](#como-rodar-o-front-end)
-  - 
-- [Equipe de desenvolvedores](#equipe-de-desenvolvedores)
-- [Precificação](#precificação)
+  - [Como Clonar](#como-clonar)
+- [Como Rodar o App](#como-rodar-o-app)
+- [Para a API:](#para-a-api)
+- [Como Rodar o Front-end](#como-rodar-o-front-end)
+  - [Equipe de desenvolvedores:](#equipe-de-desenvolvedores)
+  - [Precificação](#precificação)
 - [Monetização](#monetização)
 
 ## Geral
