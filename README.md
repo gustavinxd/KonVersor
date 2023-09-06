@@ -59,7 +59,7 @@ Para rodar o aplicativo, siga as instruções a seguir:
 1.	Clone o repositório como mencionado acima.
 2.	Navegue até a pasta do projeto no seu terminal.
 3.	Instale as dependências do projeto executando npm install ou yarn install.
-4.	Execute o aplicativo em um emulador ou dispositivo físico com npx react-native run-android ou npx react-native run-ios.
+4.	Execute no terminal o comando npx expo start --tunnel, certifique-se que tenha em seu dispositivo móvel o aplicativo Expo Go instalado, escaneie o QR-Code carregado no terminal. Também é possível a inicialização em um emulador mobile do Android Studio.
 
 ## Para a API:
 Conversor de moedas - [API de Cotações](https://docs.awesomeapi.com.br/api-de-moedas)
