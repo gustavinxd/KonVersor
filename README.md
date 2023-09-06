@@ -17,11 +17,11 @@
 ## Geral
 
 ### Projeto:
-Calculadora e Conversores Móveis
+KrauKulos
 
 ## O que é o projeto?
 
-O projeto "Calculadora e Conversores Móveis" é um aplicativo móvel desenvolvido em React Native e TypeScript. Este aplicativo possui três principais funcionalidades: uma calculadora, um conversor de medidas e um conversor de moedas. Ele foi criado com o objetivo de fornecer uma ferramenta útil e versátil para usuários que desejam realizar cálculos matemáticos, converter medidas e acompanhar as taxas de câmbio de moedas estrangeiras em seus dispositivos móveis.
+O projeto "KrauKulos" é um aplicativo móvel desenvolvido em React Native e TypeScript. Este aplicativo possui três principais funcionalidades: uma calculadora, um conversor de medidas e um conversor de moedas. Ele foi criado com o objetivo de fornecer uma ferramenta útil e versátil para usuários que desejam realizar cálculos matemáticos, converter medidas e acompanhar as taxas de câmbio de moedas estrangeiras em seus dispositivos móveis.
 Objetivo
 O objetivo deste projeto é oferecer uma solução completa e fácil de usar para cálculos, conversões de medidas e taxas de câmbio em dispositivos móveis. Queremos fornecer aos usuários uma experiência intuitiva e eficaz, permitindo que realizem tarefas comuns de maneira conveniente.
 
