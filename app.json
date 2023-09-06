@@ -4,7 +4,7 @@
     "slug": "KraKulos",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/KraKulos.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -15,16 +15,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gustavinxd.KraKulos"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#05080A"
-      }
+      },
+      "package": "com.gustavinxd.KraKulos"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2a6c3d77-f4d0-4903-bfaf-caa31072634d"
+      }
     }
   }
 }
