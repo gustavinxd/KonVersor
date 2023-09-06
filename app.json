@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#05080A"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.gustavinxd.KraKulos"
@@ -27,11 +25,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "2a6c3d77-f4d0-4903-bfaf-caa31072634d"
-      }
     }
   }
 }
